@@ -34,7 +34,7 @@ public class User {
     public boolean hasUser(){
         for (User user: AllUsers.values())
         {
-            if(user.equals(this)&& user.hashCode()==this.hashCode())
+            if(user.equals(this.user)&& user.hashCode()==this.hashCode())
                 return true;
         }
         return false;
@@ -97,6 +97,7 @@ public class User {
     {
         if (this == o) return true;
         if(o==null||getClass()!=o.getClass()) return false;
+        User user = (User)o;
         return age==user.age && Objects.equals(name, user.name) && sex== user.sex;
     }
 
